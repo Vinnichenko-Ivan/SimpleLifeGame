@@ -39,7 +39,7 @@ void printArea(vector<vector<bool>> &area)
         cout << endl;
     }
     cout << "╚" ;
-    for(int i = 0; i < 60; i++)
+    for(int i = 0; i < SIZE_X; i++)
     {
         cout << "═";
     }
@@ -222,11 +222,11 @@ void randGen(vector<vector<bool>> &area)
 int main()
 {
 
-    vector<vector<bool>> area(60,vector<bool>(20,false));// 0 - пустая клетка, 1 - живая клетка
+    vector<vector<bool>> area(SIZE_X,vector<bool>(SIZE_Y,false));// 0 - пустая клетка, 1 - живая клетка
     randGen(area);
     while(1)
     {
-      clock_t endwait = clock () + 0.25 * CLOCKS_PER_SEC ;
+      clock_t endwait = clock () + 0.1 * CLOCKS_PER_SEC ;
       handler(area);
       printArea(area);
 
